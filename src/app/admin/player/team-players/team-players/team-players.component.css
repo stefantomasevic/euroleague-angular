@@ -1,0 +1,23 @@
+/* team-players.component.css */
+
+.players-container {
+    display: flex;
+    justify-content: space-around; /* Da bi igrači bili raspoređeni po širini */
+    align-items: center; /* Da bi igrači bili centrirani po visini */
+  }
+  
+  .player-card {
+    text-align: center;
+    margin: 10px;
+  }
+  
+  .player-image {
+    width: 100px; /* Prilagodi veličinu slike prema tvojim željama */
+    height: 100px;
+    border-radius: 50%; /* Da bi slika bila okrugla */
+  }
+  
+  .player-details {
+    margin-top: 10px;
+  }
+  

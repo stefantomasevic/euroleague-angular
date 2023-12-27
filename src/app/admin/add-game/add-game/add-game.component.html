@@ -1,0 +1,149 @@
+<!-- add-game.component.html -->
+
+<!-- <div class="container mt-4 custom-container text-center">
+    <form [formGroup]="gameForm" (ngSubmit)="onSubmit()" class="d-flex align-items-center">
+      <div class="form-group " >
+        <label for="homeTeam">Home Team</label>
+        <input type="text" id="homeTeam" formControlName="homeTeam" class="form-control" required>
+      </div>
+  
+      <div class="form-group margin">
+        <label for="guestTeam">Guest Team</label>
+        <input type="text" id="guestTeam" formControlName="guestTeam" class="form-control" required>
+      </div>
+  
+      <div class="form-group margin">
+        <label for="date">Date</label>
+        <input type="datetime-local" id="date" formControlName="date" class="form-control" required>
+      </div>
+  
+      <button type="submit" class="btn btn-primary mt-3 margin">Add New</button>
+    </form>
+
+  </div> -->
+
+
+  <!-- add-game.component.html -->
+
+
+
+<!-- add-game.component.html -->
+
+<!-- <div class="container mt-4 custom-container text-center">
+    <form [formGroup]="gameForm" (ngSubmit)="onSubmit()" class="d-flex align-items-center flex-column">
+      <div formArrayName="games" class="d-flex flex-wrap justify-content-center">
+        <div *ngFor="let gameGroup of gameForm.get('games')?.value; let i = index" class="form-group margin d-flex flex-column mx-2">
+          <label for="homeTeam">Home Team</label>
+          <input type="text" [id]="'homeTeam' + i" formControlName="homeTeam" class="form-control" required>
+  
+          <label for="guestTeam">Guest Team</label>
+          <input type="text" [id]="'guestTeam' + i" formControlName="guestTeam" class="form-control" required>
+  
+          <label for="date">Date</label>
+          <input type="datetime-local" [id]="'date' + i" formControlName="date" class="form-control" required>
+        </div>
+      </div>
+  
+      <button type="button" class="btn btn-primary mt-3 margin" (click)="addNewGame()">Add New</button>
+      <button type="submit" class="btn btn-success mt-3 margin">Save</button>
+    </form>
+  </div>
+   -->
+  <!-- add-game.component.html -->
+
+<!-- add-game.component.html -->
+
+<!-- add-game.component.html -->
+
+
+  
+  
+  
+  <!-- add-game.component.html -->
+
+<!-- <div class="container mt-4 custom-container text-center">
+    <form [formGroup]="gameForm" (ngSubmit)="onSubmit()" class="d-flex align-items-center">
+      <div class="form-group margin">
+        <label for="homeTeam">Home Team</label>
+        <select id="homeTeam" formControlName="homeTeam" class="form-control" required>
+          <option value="" disabled selected>Izaberi tim</option>
+          <option *ngFor="let team of teams" [value]="team.id">{{ team.name }}</option>
+        </select>
+      </div>
+  
+      <div class="form-group margin">
+        <label for="guestTeam">Guest Team</label>
+        <select id="guestTeam" formControlName="guestTeam" class="form-control" required>
+          <option value="" disabled selected>Izaberi tim</option>
+          <option *ngFor="let team of teams" [value]="team.id">{{ team.name }}</option>
+        </select>
+      </div>
+  
+      <div class="form-group margin">
+        <label for="date">Date</label>
+        <input type="datetime-local" id="date" formControlName="date" class="form-control" required>
+      </div>
+  
+      <button type="submit" class="btn btn-success mt-3 margin">Save</button>
+    </form>
+  </div> -->
+
+  <!-- add-game.component.html -->
+
+<!-- ... -->
+
+<!-- add-game.component.html -->
+
+<!-- add-game.component.html -->
+
+<!-- add-game.component.html -->
+
+<!-- add-game.component.html -->
+
+<!-- add-game.component.html -->
+
+<!-- add-game.component.html -->
+
+<!-- add-game.component.html -->
+
+<!-- add-game.component.html -->
+
+<!-- add-game.component.html -->
+
+<div class="container mt-4 custom-container text-center">
+    <form [formGroup]="gameForm" (ngSubmit)="onSubmit()" class="d-flex align-items-center">
+      <div formArrayName="games">
+        <div *ngFor="let gameGroup of gamesFormArray; let i = index" class="form-group margin">
+          <label for="homeTeam">Home Team</label>
+          <select id="homeTeam" formControlName="homeTeam" class="form-control" required (change)="onHomeTeamChange(i)">
+            <option *ngFor="let team of teams" [value]="team.id">{{ team.name }}</option>
+          </select>
+  
+          <label for="guestTeam">Guest Team</label>
+          <select id="guestTeam" formControlName="guestTeam" class="form-control" required
+                  [disabled]="gamesFormArray[i].get('homeTeam')?.disabled || false">
+            <option *ngFor="let team of teams" [value]="team.id">{{ team.name }}</option>
+          </select>
+  
+          <label for="date">Date</label>
+          <input type="datetime-local" [id]="'date' + i" formControlName="date" class="form-control" required>
+        </div>
+      </div>
+  
+      <button type="button" class="btn btn-primary mt-3 margin" (click)="addNewGame()">Add New</button>
+      <button type="submit" class="btn btn-success mt-3 margin">Save</button>
+    </form>
+  </div>
+  
+  
+  
+  
+  
+  
+  <!-- ... -->
+  
+  
+  
+  
+  
+  

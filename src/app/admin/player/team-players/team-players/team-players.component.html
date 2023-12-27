@@ -1,1 +1,17 @@
-<p>team-players works!</p>
+<div style="margin-top: 20px;"></div>
+
+<div class="container">
+    <div class="row">
+      <div *ngFor="let player of players" class="col-md-2">
+        <div class="card mb-3" style="height: 320px;">
+          <img [src]="getImageUrl(player.imagePath)" alt="{{ player.firstname }} {{ player.lastname }}" class="card-img-top" style="height: 60%; object-fit: contain;">
+          <div class="card-body">
+            <h5 class="card-title" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ player.firstname }} {{ player.lastname }}</h5>
+            <p class="card-text" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ player.position }}, {{ player.nationality }}</p>
+            <p class="card-text">Age: {{ player.age }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

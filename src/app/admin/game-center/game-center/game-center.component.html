@@ -1,0 +1,33 @@
+<!-- game-center.component.html -->
+
+
+
+            <a class="btn btn-primary mt-4" href="add-game" style="margin-left: 70%;"  (click)="onAddGameClick()">
+                <i class="fa fa-plus"   aria-hidden="true"></i> Add New
+              </a>
+             
+
+<div class="container mt-4 custom-container"  *ngFor="let game of gameDetails" >
+    <div class="row">
+      <div class="col-md-2">
+        <strong>Date:</strong> {{ game.date | date: 'shortTime' }}
+      </div>
+      <div class="col-md-2">
+        <!-- <strong>HomeTeam:</strong> -->
+         <!-- {{ game.homeTeam }} -->
+        <img *ngIf="game.homeLogo" [src]="getImageUrl(game?.homeLogo)" alt="Domaći tim logo" style="max-width: 100px; max-height: 100px;">
+      </div>
+      <div class="col-md-2 mt-4 ">
+        <strong>Result:</strong> {{ game.homeScore }} - {{ game.guestScore }}
+      </div>
+      <div class="col-md-2">
+        <!-- <strong>GuestTeam:</strong>  -->
+        <!-- {{ game.guestTeam }} -->
+        <img *ngIf="game.guestLogo" [src]="getImageUrl(game?.guestLogo)" alt="Gostujući tim logo" style="max-width: 100px; max-height: 100px;">
+      </div>
+      
+   
+</div>
+  </div>
+
+  

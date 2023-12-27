@@ -1,0 +1,85 @@
+
+
+
+<!-- tvoj-component.component.html -->
+
+  
+
+
+<div class="container mt-5">
+    <div class="d-flex justify-content-center align-items-center" style=" width: 50%;height: 100%; background-color: rgba(255, 255, 255, 0.945); margin: 0 auto;">
+      <img [src]="getImageUrl(gameData?.homeLogo)" alt="Home Team Logo" style="max-width: 100px; max-height: 100px;">
+      <p class="mx-3">{{ gameData?.homeScore }} - {{ gameData?.guestScore }}</p>
+      <img [src]="getImageUrl(gameData?.guestLogo)" alt="Guest Team Logo" style="max-width: 100px; max-height: 100px;">
+    </div>
+    <div class="mt-3" style="margin: auto; width: 30%;">
+      <button class="btn btn-primary mx-2 btn-stats" [class.btn-primary]="showHomeStats" [style.background-color]="showHomeStats ? '' : '#ADD8E6'" (click)="showHomeStats = true;">ShowHomeStats</button>
+      <button class="btn btn-primary mx-2 btn-stats" [class.btn-primary]="!showHomeStats" [style.background-color]="!showHomeStats ? '' : '#ADD8E6'" (click)=" showHomeStats = false;">ShowGuestStats</button>
+    </div>
+    
+    <div *ngIf="showHomeStats">
+      <table class="table table-bordered mt-3">
+        <thead>
+          <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Points</th>
+            <th>Rebounds</th>
+            <th>Fouls</th>
+            <th>Update Points</th>
+            <th>Update Rebouns</th>
+            <th>Update Fouls</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let player of gameData?.homePlayerStats">
+            <td>{{ player.firstName }}</td>
+            <td>{{ player.lastName }}</td>
+            <td>{{ player.points }}</td>
+            <td>{{ player.rebounds }}</td>
+            <td>{{ player.fouls }}</td>
+            <td><button class="btn btn-success" (click)="updateStat(player, 'points', 1)">+1 </button>
+                <button class="btn btn-success" style="margin-left: 5px;" (click)="updateStat(player, 'points', 2)">+2 </button>
+                <button class="btn btn-success" style="margin-left: 5px;" (click)="updateStat(player, 'points', 3)">+3 </button>
+            </td>
+            <td><button class="btn btn-success" (click)="updateStat(player, 'rebounds', 1)">+1 </button></td>
+            <td><button class="btn btn-success" (click)="updateStat(player, 'fouls', 1)">+1 </button></td>
+          </tr>
+        </tbody>
+      </table>
+      
+    </div>
+  
+    <div *ngIf="!showHomeStats">
+      <table class="table table-bordered mt-3">
+        <thead>
+          <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Points</th>
+            <th>Rebounds</th>
+            <th>Fouls</th>
+            <th>Update Points</th>
+            <th>Update Rebouns</th>
+            <th>Update Fouls</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let player of gameData?.guestPlayerStats">
+            <td>{{ player.firstName }}</td>
+            <td>{{ player.lastName }}</td>
+            <td>{{ player.points }}</td>
+            <td>{{ player.rebounds }}</td>
+            <td>{{ player.fouls }}</td>
+            <td><button class="btn btn-success" (click)="updateStat(player, 'points', 1)">+1 </button></td>
+          <td><button class="btn btn-success" (click)="updateStat(player, 'rebounds', 1)">+1 </button></td>
+          <td><button class="btn btn-success" (click)="updateStat(player, 'fouls', 1)">+1 </button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
+
+  
